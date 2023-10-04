@@ -16,9 +16,12 @@
         global $error;
         global $donnees;
         if(!empty($title) && !empty($content) && !empty($creation_date)){
-            $requete = "INSERT INTO article (title, content, creation_date) VALUES (?, ?, ?)";
+            $requete = "INSERT INTO article (title, content, creation_date) VALUES (:title, :content, :creation_date)";
             $stmt = $bdd->prepare($requete);
-            $stmt->execute([$title, $content, $creation_date]);
+            $stmt->bindParam(":title", $title, PDO::PARAM_STR);
+            $stmt->bindParam(":content", $content, PDO::PARAM_STR);
+            $stmt->bindParam(":creation_date", $creation_date, PDO::PARAM_STR);
+            $stmt->execute();
             $donnees = "Données de l'article : <br>";
             $donnees .= "Titre : " . $title . "<br>";
             $donnees .=  "Contenu : " . $content . "<br>";
