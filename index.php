@@ -15,12 +15,12 @@
 </html>
 <?php
     include('result.php');
-    try{
-        addArticle($bdd);
-    }
-    catch (PDOException $e){
-        echo 'Message : ' . $e->getMessage();
-    }
+    // try{
+    //     addArticle($bdd);
+    // }
+    // catch (PDOException $e){
+    //     echo 'Message : ' . $e->getMessage();
+    // }
     include('form.php');
 ?>
 
