@@ -12,7 +12,7 @@
         <input type="text" name="title" id="title"><br><br>
         
         <label for="content">Contenu :</label>
-        <textarea name="content" id="content"></textarea><br><br>
+        <textarea name="content" id="content" style="resize: none; height: 150px"></textarea><br><br>
         
         <label for="creation_date">Date :</label>
         <input type="date" name="creation_date" id="creation_date"><br><br>
